@@ -7,6 +7,8 @@ import { findByAttr, checkProps } from '../test/testUtils';
 
 Enzyme.configure({ adapter:  new EnzymeAdapter() });
 
+const defaultProps = { success: false };
+
 /**
  * Factory function to create a ShallowWrapper for the congrats component
  * @function setup
@@ -14,11 +16,12 @@ Enzyme.configure({ adapter:  new EnzymeAdapter() });
  * @returns {ShallowWrapper}
  */
 const setup = (props={}) => {
-  return shallow(<Congrats {...props} />);
+  const setupProps = { ...defaultProps, ...props }
+  return shallow(<Congrats {...setupProps} />);
 }
 
 test('Renders without error', () => {
-  const wrapper = setup();
+  const wrapper = setup({ success: false });
   const component = findByAttr(wrapper, 'component-congrats');
   expect(component.length).toBe(1);
 });
