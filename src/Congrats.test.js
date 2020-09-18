@@ -3,9 +3,6 @@ import { shallow } from 'enzyme';
 import Congrats from './Congrats';
 import { findByAttr, checkProps } from '../test/testUtils';
 
-
-
-
 const defaultProps = { success: false };
 
 /**
