@@ -19,14 +19,24 @@ const setup = (initialState={}) => {
 
 describe('Render', () => {
   describe('Word has not been guessed', () => {
-    test('Renders component without error', () => {
 
+    let wrapper;
+    beforeEach(() => {
+      const initialState = { success: false };
+      wrapper = setup(initialState);
+    });
+
+    test('Renders component without error', () => {
+      const component = findByAttr(wrapper, "component-input");
+      expect(component.length).toBe(1);
     });
     test('Renders input box', () => {
-
+      const inputBox = findByAttr(wrapper, "input-box");
+      expect(inputBox.length).toBe(1);
     });
     test('Renders submit button', () => {
-
+      const submitButton = findByAttr(wrapper, "submit-button");
+      expect(submitButton.length).toBe(1);
     });
   });
   describe('Word has been guessed', () => {
