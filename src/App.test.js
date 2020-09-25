@@ -52,7 +52,7 @@ test('getSecretWord runs on App mount', () => {
   const props = {
     getSecretWord: getSecretWordMock,
     success: false,
-    guessedWords = []
+    guessedWords: []
   }
 
   //set up app component with getSecretWordMock as getSecretWord prop
