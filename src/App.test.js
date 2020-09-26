@@ -18,14 +18,14 @@ const setup = ( state = {} ) => {
 describe('redux properties', () => {
 
   test('has access to success state', () => {
-    const success = true;
+    const success = false; //true
     const wrapper = setup({ success });
     const successProp = wrapper.instance().props.success;
     expect(successProp).toBe(success);
   });
 
   test('has access to secretWord state', () => {
-    const secretWord = 'party';
+    const secretWord = 'train'; //party
     const wrapper = setup({ secretWord });
     const secretWordProp = wrapper.instance().props.secretWord;
     expect(secretWordProp).toBe(secretWord);

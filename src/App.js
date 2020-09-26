@@ -21,7 +21,7 @@ export class UnconnectedApp extends React.Component {
   render(){
     return(
       <div className="container">
-        <h1>Jotto</h1>
+        <h1>Jotto App</h1>
         <Congrats success={this.props.success} />
         <Input />
         <GuessedWords guessedWords={this.props.guessedWords} />
